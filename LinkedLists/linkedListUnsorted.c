@@ -9,18 +9,17 @@ struct Node
 
 int main()
 {
-    struct Node *head = 0, *newNode, *temp;
+    struct Node *head = 0, *temp, *newNode;
     int choice;
 
     while (choice)
     {
-
         newNode = (struct Node *)malloc(sizeof(struct Node));
 
-        printf("Enter Data\n");
-        scanf("\n%d", &newNode->data);
+        printf("enter data\n");
+        scanf("%d", &newNode->data);
 
-        if (head == 0)
+        if (head == NULL)
         {
             head = temp = newNode;
         }
@@ -30,12 +29,12 @@ int main()
             temp = newNode;
         }
 
-        printf("Do you want to continue (0,1)");
+        printf("Do you wish to continue(0,1)");
         scanf("\n%d", &choice);
     }
 
     temp = head;
-    while (temp != 0)
+    while (temp != NULL)
     {
         printf("%d\n", temp->data);
         temp = temp->next;
